@@ -7,7 +7,7 @@ git_repo: https://github.com/jcalazan/youtube-audio-dl.git
 ssh_forward_agent: false
 
 project_name: test
-application_name: test
+application_name: youtube-audio-dl
 
 # Note that this PPA doesn't guarantee timely updates in case of security issues.
 # Simply remove these two vars below if you prefer to use the official PPA and
