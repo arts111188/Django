@@ -6,9 +6,22 @@ git_branch: master
 
 
 # Database settings.
+sda_pass:  !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          66366234323261613136653935626563396538336433363666303332336666366237316232626632
+          6266346335623436306162393339646138363835303466620a326165613235326535666335346437
+          38376565333733313430383334323436343639623233313065653361333136323439646539393132
+          6135633165633938640a343930393736633765396666393334303135636332656134646634343038
+          6165
 db_user: "{{ application_name }}"
 db_name: "{{ application_name }}"
-db_password: password
+db_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          66366234323261613136653935626563396538336433363666303332336666366237316232626632
+          6266346335623436306162393339646138363835303466620a326165613235326535666335346437
+          38376565333733313430383334323436343639623233313065653361333136323439646539393132
+          6135633165633938640a343930393736633765396666393334303135636332656134646634343038
+          6165
 
 
 # Gunicorn settings. For the number of workers, a good rule to follow is
@@ -24,18 +37,18 @@ gunicorn_timeout_seconds: 300
 
 
 # RabbitMQ settings.
-#rabbitmq_server_name: "{{ inventory_hostname }}"
-#
-#rabbitmq_admin_user: admin
-#rabbitmq_admin_password: password
-#
-#rabbitmq_application_vhost: "{{ application_name }}"
-#rabbitmq_application_user: "{{ application_name }}"
-#rabbitmq_application_password: password
+rabbitmq_server_name: "{{ inventory_hostname }}"
+
+rabbitmq_admin_user: admin
+rabbitmq_admin_password: password
+
+rabbitmq_application_vhost: "{{ application_name }}"
+rabbitmq_application_user: "{{ application_name }}"
+rabbitmq_application_password: password
 
 
 # Celery settings.
-#celery_num_workers: 2
+celery_num_workers: 2
 
 
 # Application settings.
