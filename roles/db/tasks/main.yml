@@ -17,7 +17,7 @@
     update_cache: "{{ update_apt_cache }}"
     state: present
     name:
-      - postgresql
+      - postgresql-10
       - postgresql-contrib
       - "{{ base_python_package }}-psycopg2"
   tags: packages
